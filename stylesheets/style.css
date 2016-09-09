@@ -359,6 +359,12 @@ a.social-icon {
 }
 .slide .slide-item{
     overflow: hidden;
+    color: white;
+}
+.slide .slide-item .btn {
+    color: white;
+    text-shadow: 0 0 10px black;
+    background-color: transparent;
 }
 .slide .slide-item .slide-up{
     top:0;
@@ -388,8 +394,8 @@ div.loading>div{
 
 @media (min-width: 768px) {
     div.loading>div{
-    padding-right: 30px;;
-}
+        padding-right: 30px;;
+    }
 }
 
 #kau-coffee,
