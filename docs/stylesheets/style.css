@@ -11,22 +11,35 @@
   src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(../fonts/Roboto-Condensed.woff) format('woff');
 }
 * {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto Condensed','Hiragino Sans GB','Microsoft YaHei', sans-serif;
 }
 p,
 table {
-    font-family: 'Cormorant Infant', serif;
+    font-family: 'Cormorant Infant','Hiragino Sans GB','Microsoft YaHei', serif;
+    line-height:170%
+}
+img{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none; 
 }
 h1 {
     font-style: bold;
     text-transform: capitalize;
-    padding-top: 20px;
-    padding-bottom: 30px;
+    margin-top: 20px;
 }
 p {
-    font-size: 20px;
-    text-indent: 40px;
-    padding-bottom: 30px;
+    font-size: 15px;
+    text-indent: 30px;
+    margin-top: 20px;
+}
+a{
+    text-decoration: none !important;
+}
+.btn{
+    margin-top: 20px;
 }
 .navbar {
     border-bottom: 2px solid #7C6A55;
@@ -42,8 +55,8 @@ li.dropdown>ul.dropdown-menu {
     border-radius: 0;
     animation-duration: .5s;
     -webkit-animation-duration: .5s;
-    
 }
+
 .navbar {
     position: fixed;
     top:0;
@@ -110,7 +123,31 @@ li.dropdown>ul.dropdown-menu {
     background-color: rgba(255, 255, 255, .1);
     border-style: outset;
 }
-
+@media (max-width: 768px){
+    li.dropdown>ul.dropdown-menu a{
+        text-align: center;
+        margin-left:-10px;
+    }
+    .carousel-caption h3{
+        font-size: 15px;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-shadow: 0 0 10px black;
+    }
+    .carousel-caption p{
+        font-size: 12px;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-shadow: 0 0 10px black;
+    }
+    a.carousel-control,
+    a.carousel-control>span.glyphicon{
+        opacity: .8;
+    }
+    .carousel-indicators{
+        transform: scale(.5,.5);
+    }
+}
 hr {
     border: 0;
     height: 1px;
@@ -249,15 +286,13 @@ a.social-icon {
     border-top: none;
 }
 
-
-
 .progress {
   position: relative;
-  height: 4px;
+  height: 2px;
   display: block;
   width: 100%;
   background-color: #DEC29A;
-  border-radius: 2px;
+  border-radius: 0;
   margin: 0.5rem 0 1rem 0;
   overflow: hidden;
 }
@@ -365,25 +400,32 @@ a.social-icon {
 .slide .slide-item{
     overflow: hidden;
     color: white;
+    text-shadow: 0 0 10px black;
 }
 .slide .slide-item .btn {
     color: white;
     text-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
     background-color: transparent;
 }
+.slide .slide-item .btn:hover {
+    background-color: rgba(255, 255, 255, .1);
+}
 .slide .slide-item .slide-up{
+    z-index:2;
     top:0;
     transition-duration: 1s;
 }
 .slide .slide-item:hover .slide-up{
-    top:-300px;
+    top:-333px;
 }
 .slide .slide-item .slide-down{
+    z-index:2;
     bottom:0;
     transition-duration: 1s;
 }
 .slide .slide-item:hover .slide-down{
-    bottom:-300px;
+    bottom:-333px;
 }
 .slide .slide-item .row{
     opacity: 0;
@@ -393,21 +435,273 @@ a.social-icon {
     opacity: 1;
 }
 
+@media (max-width: 768px) {
+    .slide .slide-item .row{
+        opacity: 1;
+    }
+    .slide .slide-item .slide-up{
+        visibility: hidden;
+    }
+    .slide .slide-item .slide-down{
+        visibility: hidden;
+    }
+}
+
 div.loading>div{
     padding-right: 0;
 }
 
 @media (min-width: 768px) {
     div.loading>div{
-        padding-right: 30px;;
-    }
+    padding-right: 30px;;
+}
 }
 
 #kau-coffee,
 #tea,
-#orchard { 
+#orchard,
+#news,
+#next{ 
     display: block;
     position: relative;
     top: -140px;
     visibility: hidden;
+}
+@media (max-width: 768px) {
+  #kau-coffee,
+  #tea,
+  #orchard,
+  #news,
+  #next { 
+      top: -100px;
+  }
+}
+#carousel-generic{
+    display: block;
+    position: relative;
+    top: -160px;
+    padding-top:160px;
+    margin-bottom: -160px;
+}
+.carousel-control{
+    margin-top:160px;
+}
+
+span.yearlist{
+    background-color:white;
+    z-index:2;
+    font-size: 20px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+span.yearlist a{
+    color:#7C6A55;
+    cursor: pointer;
+}
+span.yearlist a:hover{
+    color:#DEC29A;
+}
+span.yearlist:not(:first-child)::before {
+    content: '∙';
+}
+.newsitemtop{
+    height:50px;
+    border-width: 2px 0 2px 2px;
+    border-left-style: solid;
+    -webkit-border-image: 
+      -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0))), to(#7C6A55) 1 100%;
+    -webkit-border-image: 
+      -webkit-linear-gradient(rgba(0, 0, 0, 0),#7C6A55) 1 100%;
+    -moz-border-image:
+      -moz-linear-gradient(rgba(0, 0, 0, 0),#7C6A55) 1 100%;    
+    -o-border-image:
+      -o-linear-gradient(rgba(0, 0, 0, 0),#7C6A55) 1 100%;
+    border-image:
+      linear-gradient(to bottom, rgba(0, 0, 0, 0), #7C6A55) 1 100%;
+}
+.newsitembottom{
+    height:50px;
+    border-width: 2px 0 2px 2px;
+    border-left-style: solid;
+    -webkit-border-image: 
+      -webkit-gradient(linear, 0 0, 0 100%, from(#7C6A55), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image: 
+      -webkit-linear-gradient(#7C6A55, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image:
+      -moz-linear-gradient(#7C6A55, rgba(0, 0, 0, 0)) 1 100%;    
+    -o-border-image:
+      -o-linear-gradient(#7C6A55, rgba(0, 0, 0, 0)) 1 100%;
+    border-image:
+      linear-gradient(to bottom, #7C6A55, rgba(0, 0, 0, 0)) 1 100%;
+}
+.newsitem{
+    position: relative;
+    border-left: 2px solid #7C6A55;
+    background-color: white;
+}
+.newsbullet{
+    position: absolute;
+    font-size:12px;
+    left:-6px;
+    top:13px;
+    height:39px;
+}
+.newsitem:hover .newstime,
+.newsitem:hover .newstitle,
+.newsitem:hover .newsbullet{
+    color:#DEC29A;
+}
+.newstime,
+.newstitle,
+.newsbullet{
+    color:#7C6A55;
+}
+@media (max-width: 768px) {
+    div.newstime{
+        text-align: left;
+    }
+}
+
+.leader-card{
+    overflow:hidden;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.leader-detail{
+    max-height:0;
+    opacity: 0;
+    transition-duration: 2s;
+}
+.leader-detail p{
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.leader-card:hover{
+    padding-top:19px;
+    border-right: 1px solid #7C6A55;
+    border-bottom: 1px solid #7C6A55;
+    border-left: 1px solid #DEC29A;
+    border-top: 1px solid #DEC29A;
+}
+.leader-card:hover .leader-detail{
+    max-height:500px;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .leader-detail{
+        opacity: 1;
+        max-height:500px;
+    }
+    .leader-card:hover{
+        border: none;
+    }
+}
+.sponsored-card{
+    padding-top:20px;
+    padding-bottom:20px;
+}
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:.8}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:.8}
+80% {opacity:0}
+100% {opacity:0}
+}
+.agriculture p,
+.agriculture h1,
+.agriculture h4,
+.agriculture h5,
+.agriculture a{
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+.agriculture > div.row{
+    padding-top:20vh;
+  position: relative;
+}
+
+.agriculture > div.areaimage-lg,
+.agriculture > div.areaimage-sm{
+    padding-top:0;
+    padding-bottom:0;
+    background-color: #8bc63e;
+}
+.agriculture > div.areaimage-lg > img{
+    height: 100%;
+    width: 100%;
+}
+.agriculture > div.areaimage-lg > h5,
+.agriculture > div.areaimage-sm > h5{
+  text-shadow: 0 0 4px black;
+  -webkit-text-shadow: 0 0 4px black;
+  cursor: default;
+}
+.agriculture > div.areaimage-lg > h4,
+.agriculture > div.areaimage-sm > h4{
+  text-shadow: 0 0 4px black;
+  -webkit-text-shadow: 0 0 4px black;
+  transition-duration: .5s;
+}
+.agriculture > div.areaimage-lg > h4:hover,
+.agriculture > div.areaimage-sm > h4:hover{
+  transform: scale(2, 2);
+  -ms-transform: scale(2, 2);
+  -webkit-transform: scale(2, 2);
+  text-shadow: 0 0 10px black;
+  -webkit-text-shadow: 0 0 10px black;
+}
+.backcover{
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  opacity: .3;
+  background-color:black;
+  transition-duration: 2s;
+}
+.backcover:hover{
+  opacity: 0;
+}
+#top-link-block.affix-top {
+    position: absolute;
+    bottom: -80px;
+    right: 10px;
+}
+#top-link-block.affix {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+}
+
+.flexslider-container .flex-viewport ul{
+    background-color:#222;
+}
+
+#carousel-generic p{
+    text-indent: 0;
+}
+
+div.row.flex-slider-row{
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:0;
+    padding-right:0;
+    margin-top:20px;
+    margin-bottom:20px;
+    padding:0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .5);
+}
+.flexslider{
+    background-color: transparent;
 }

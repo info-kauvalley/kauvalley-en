@@ -45,24 +45,9 @@ kauValley.controller('kauValleyController', function kauValleyController($scope,
         'title': 'CEO',
         'url': 'images/profile.jpg',
         'detail':'The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.'
-    }, {
-        'name': 'Lei LI',
-        'title': 'CEO',
-        'url': 'images/profile.jpg',
-        'detail':'The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.'
     }];
 
     $scope.leaders = [{
-        'name': 'Meimei HAN',
-        'title': 'Manager',
-        'url': 'images/profile.jpg',
-        'detail':'The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.'
-    }, {
-        'name': 'Meimei HAN',
-        'title': 'Manager',
-        'url': 'images/profile.jpg',
-        'detail':'The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.'
-    }, {
         'name': 'Meimei HAN',
         'title': 'Manager',
         'url': 'images/profile.jpg',
